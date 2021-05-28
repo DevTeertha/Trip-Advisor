@@ -4,7 +4,7 @@ import { homeData } from "../../FakeData/Database";
 const initialState = {
     places: homeData,
     results: [],
-    bookList:[]
+    bookList:{}
 }
 
 export const Reducers = (state = initialState, action) => {
@@ -16,9 +16,10 @@ export const Reducers = (state = initialState, action) => {
             }
         }
         case BOOK_NOW:{
+            const booking = state.places.find(place=>place.id===action.id);
             return {
                 ...state,
-                bookList: [action.id]
+                bookList:  booking
             };
         }
         default:
