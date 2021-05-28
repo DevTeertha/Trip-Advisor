@@ -1,10 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './Components/Home/Home';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello Trip Advisor, I am Dev Teertha</h1>
+    <div>
+      <Home></Home>
     </div>
   );
 }
