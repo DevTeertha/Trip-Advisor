@@ -10,7 +10,6 @@ import { connect } from 'react-redux';
 
 const Home = (props) => {
     const { bookNow, places, bookList } = props;
-    console.log(bookList)
 
     return (
         <div>
