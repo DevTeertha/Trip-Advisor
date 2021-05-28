@@ -14,8 +14,8 @@ const Booking = () => {
     return (
         <div>
             <h5>Where do you want to go</h5>
-            <p className="mt-5">Location</p>
-            <form>
+            <form className='form-control mt-4 pb-5'>
+                <p className="mt-4">Location</p>
                 <div className="from-group" >
                     <input type="text" id='location' className="form-control" placeholder='Enter location' name='location' required />
                 </div>
@@ -28,7 +28,7 @@ const Booking = () => {
                         <h4>Adult</h4>
                     </div>
                     <div>
-                        <span><b>0</b></span> &nbsp;&nbsp; <Button><h5>-</h5></Button> &nbsp;&nbsp; <Button><h5>+</h5></Button>
+                        &nbsp;&nbsp;<span><b>0</b></span> &nbsp;&nbsp; <Button><h5>-</h5></Button> &nbsp;&nbsp; <Button><h5>+</h5></Button>
                     </div>
                 </div>
                 <div className='d-flex adult mt-4'>
@@ -36,7 +36,7 @@ const Booking = () => {
                         <h4>Child</h4>
                     </div>
                     <div>
-                        <span><b>0</b></span> &nbsp;&nbsp; <Button><h5>-</h5></Button> &nbsp;&nbsp; <Button><h5>+</h5></Button>
+                        &nbsp;&nbsp;&nbsp;<span><b>0</b></span> &nbsp;&nbsp; <Button><h5>-</h5></Button> &nbsp;&nbsp; <Button><h5>+</h5></Button>
                     </div>
                 </div>
                 <div className='d-flex adult mt-4'>
@@ -46,6 +46,10 @@ const Booking = () => {
                     <div>
                         <span><b>0</b></span> &nbsp;&nbsp; <Button><h5>-</h5></Button> &nbsp;&nbsp; <Button><h5>+</h5></Button>
                     </div>
+                </div>
+                <div className="App mt-4">
+                    <Button>Apply</Button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <Button>Search</Button>
                 </div>
             </form>
         </div>
