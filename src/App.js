@@ -4,8 +4,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+    
       <h1>Hello Trip Advisor, I am Dev Teertha</h1>
-    </div>
+      <h1>Hello Trip Advisor, I am riyad </h1>
+      </div>
   );
 }
 
