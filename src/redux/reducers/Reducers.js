@@ -1,14 +1,24 @@
+import { BOOK_NOW, SEARCH } from "../actions/Actions";
+import { homeData } from "../../FakeData/Database";
+
 const initialState = {
-    hotels: [],
-    result: [],
+    places: homeData,
+    results: [],
     bookList:[]
 }
 
 export const Reducers = (state = initialState, action) => {
     switch(action.type){
-        case 'BOOK_NOW':{
+        case SEARCH:{
+            const searchPlaces = state.places.filter(place=>place.location===action.location);
             return {
-                bookList: [...state.bookList, action.id]
+                results: [...searchPlaces, action.location]
+            }
+        }
+        case BOOK_NOW:{
+            return {
+                ...state,
+                bookList: [action.id]
             };
         }
         default:

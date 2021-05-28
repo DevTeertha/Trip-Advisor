@@ -3,13 +3,11 @@ import Home from './Components/Home/Home';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 function App() {
   return (
-    <div>
       <Router>
         <Switch>
           <Route path="/">
@@ -17,7 +15,6 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </div>
   );
 }
 
