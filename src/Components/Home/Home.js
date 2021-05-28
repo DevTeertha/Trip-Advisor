@@ -52,7 +52,7 @@ const Home = () => {
         <div>
             <Header></Header>
             <Container>
-                <section className="row d-flex align-items-center mt-5">
+                <section className="row d-flex mt-5">
                     <div className="col-md-4">
                         <Booking></Booking>
                     </div>
