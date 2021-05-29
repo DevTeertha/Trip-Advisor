@@ -1,18 +1,20 @@
 import { BOOK_NOW, SEARCH } from "../actions/Actions";
 import { homeData } from "../../FakeData/Database";
+import { hotelsData } from "../../FakeData/Database";
 
 const initialState = {
     places: homeData,
     results: [],
-    bookList:{}
+    bookList:{},
+    hotels: hotelsData
 }
 
 export const Reducers = (state = initialState, action) => {
     switch(action.type){
         case SEARCH:{
-            const searchPlaces = state.places.filter(place=>place.location===action.location);
             return {
-                results: [...searchPlaces, action.location]
+                ...state,
+                results: action
             }
         }
         case BOOK_NOW:{

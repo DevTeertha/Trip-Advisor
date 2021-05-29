@@ -1,9 +1,10 @@
 export const SEARCH = 'SEARCH';
 export const BOOK_NOW = 'BOOK_NOW';
 
-export const searchResult = location => {
+export const searchResult = (data, location="dhaka") => {
     return{
         type: SEARCH,
+        data,
         location
     }
 }

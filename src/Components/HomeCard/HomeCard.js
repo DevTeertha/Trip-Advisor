@@ -12,7 +12,6 @@ const HomeCard = (props) => {
                         <h6>{place}</h6>
                         <p>{title}</p>
                         <p>{person}</p>
-                        <button onClick={()=>bookNow(id)} className="btn btn-primary">Book Now</button>
                     </div>
                 </div>
             </div>

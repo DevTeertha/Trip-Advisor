@@ -5,13 +5,17 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import Search from './Components/Search/Search';
 
 function App() {
   return (
       <Router>
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <Home></Home>
+          </Route>
+          <Route path="/search">
+            <Search></Search>
           </Route>
         </Switch>
       </Router>
