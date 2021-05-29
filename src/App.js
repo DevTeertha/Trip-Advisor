@@ -1,5 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
+<<<<<<< HEAD
 import Login from './Components/Login/Login/Login';
 import { createContext, useState } from 'react';
 import {
@@ -11,10 +11,21 @@ import {
 
 export const UserContext = createContext()
 
+=======
+import Home from './Components/Home/Home';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import Search from './Components/Search/Search';
+import BookNow from './Components/BookNow/BookNow';
+>>>>>>> Trial
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({})
   return (
+<<<<<<< HEAD
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
 <Router>
       <Switch>
@@ -32,6 +43,24 @@ function App() {
 
      
     </UserContext.Provider>
+=======
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
+          <Route path="/search">
+            <Search></Search>
+          </Route>
+          <Route path="/:id">
+            <BookNow></BookNow>
+          </Route>
+        </Switch>
+      </Router>
+>>>>>>> Trial
   );
 }
 
