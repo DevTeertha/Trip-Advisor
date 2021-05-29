@@ -88,11 +88,8 @@ const Login = (props) => {
             .signInWithPopup(provider)
             .then((result) => {
                 const { displayName, email, photoURL } = result.user;
-
                 const signedInUser = { isSignIn: true, name: displayName, email: email, img: photoURL };
-                // setLoggedInUser(signedInUser);
                 setUser(signedInUser)
-
                 storeAuthToken();
                 history.replace(from);
             })

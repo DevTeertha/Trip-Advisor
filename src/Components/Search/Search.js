@@ -6,7 +6,7 @@ import SearchCard from './SearchCard';
 import MapView from './MapView';
 
 const Search = (props) => {
-    const { results } = props;
+    const { results, hotels } = props;
     const { data, location } = results;
 
     return (
@@ -21,7 +21,7 @@ const Search = (props) => {
                             <h5 className="fw-bold">Stay in {location} Division</h5>
                             <div className="mt-4">
                                 {
-                                    data.map((dt, index) => <SearchCard key={index} dt={dt}></SearchCard>)
+                                    hotels.map((dt, index) => <SearchCard key={index} dt={dt}></SearchCard>)
                                 }
                             </div>
                         </div>
@@ -40,7 +40,8 @@ const Search = (props) => {
 
 const mapStateToProps = state => {
     return {
-        results: state.results
+        results: state.results,
+        hotels: state.hotels
     }
 }
 const mapDispatchToProps = {

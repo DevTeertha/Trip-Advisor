@@ -1,10 +1,12 @@
 import { BOOK_NOW, SEARCH, SET_USER } from "../actions/Actions";
-import { homeData } from "../../FakeData/Database";
+import { homeData, experienceData } from "../../FakeData/Database";
 import { hotelsData } from "../../FakeData/Database";
 
 const initialState = {
-    places: homeData,
-    results: [],
+    places: {homeData, experienceData},
+    results: {
+        data:[]
+    },
     bookList: {},
     hotels: hotelsData,
     user: {

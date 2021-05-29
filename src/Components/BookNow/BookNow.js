@@ -105,7 +105,7 @@ const BookNow = (props) => {
                                     </tr>
                                     <tr>
                                         <td>
-                                            <button className="btn btn-danger mt-4">Book Now</button>
+                                            <button className="btn btn-success mt-4 w-100">Book Now</button>
                                         </td>
                                     </tr>
                                 </table>
