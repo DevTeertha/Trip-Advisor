@@ -1,22 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
 import Login from './Components/Login/Login/Login';
 import { createContext, useState } from 'react';
+
+import Home from './Components/Home/Home';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
-
+import Search from './Components/Search/Search';
 export const UserContext = createContext()
-
-
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({})
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-<Router>
+{/* <Router>
       <Switch>
         <Route exact path="/">
 
@@ -28,10 +26,21 @@ function App() {
    
         </Route>
       </Switch>
-      </Router>
+      </Router> */}
 
      
-    </UserContext.Provider>
+  
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route path="/search">
+            <Search></Search>
+          </Route>
+        </Switch>
+      </Router>
+      </UserContext.Provider>
   );
 }
 
