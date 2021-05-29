@@ -47,8 +47,16 @@ export const hotelsData = [
         name: "Hotel Dhaka",
         room: "4guest 2bedrooms 2beds 2baths",
         benefit: "Wifi Air Conditioning Kitchen",
-        price: "33$/night",
-        link: "https://i.ibb.co/PtfhG1g/201916769776917542.jpg"
+        price: "33",
+        cleaningFee: "10",
+        serviceFee: "21",
+        location: "Dhaka, Bangladesh",
+        link: "https://i.ibb.co/PtfhG1g/201916769776917542.jpg",
+        rule1: "You'll have the condominium to yourself",
+        rule2: "You can check in with the doorman",
+        rule3: "10 recent guest said this place was sparkling clean",
+        rule4: "Superhosts are experienced, highly rated hosts who are committed to providing great stays for guests.",
+        description: "It's newly constructed 7 storied building maintaining building code by a locally famous architect. Enough lights and natural air are playing here. The place is calm and noise free. You'll love my place for its lovely and bright look comfortable stay. Bangladesh is a beauty with its six seasons and green."
     },
     {
         id: 'h2',
@@ -56,7 +64,15 @@ export const hotelsData = [
         room: "4guest 2bedrooms 2beds 2baths",
         benefit: "Wifi Air Conditioning Kitchen",
         price: "43$/night",
-        link: "https://i.ibb.co/3M3cW9w/photo-1522708323590-d24dbb6b0267.jpg"
+        cleaningFee: "10",
+        serviceFee: "21",
+        location: "Dhaka, Bangladesh",
+        link: "https://i.ibb.co/3M3cW9w/photo-1522708323590-d24dbb6b0267.jpg",
+        rule1: "You'll have the condominium to yourself",
+        rule2: "You can check in with the doorman",
+        rule3: "10 recent guest said this place was sparkling clean",
+        rule4: "Superhosts are experienced, highly rated hosts who are committed to providing great stays for guests.",
+        description: "It's newly constructed 7 storied building maintaining building code by a locally famous architect. Enough lights and natural air are playing here. The place is calm and noise free. You'll love my place for its lovely and bright look comfortable stay. Bangladesh is a beauty with its six seasons and green."
     },
     {
         id: 'h3',
@@ -64,6 +80,14 @@ export const hotelsData = [
         room: "4guest 2bedrooms 2beds 2baths",
         benefit: "Wifi Air Conditioning Kitchen",
         price: "55$/night",
-        link: "https://i.ibb.co/0YZP8YR/the-atlantic-apartments-1br-classical-kitchen-solis.jpg"
+        cleaningFee: "10",
+        serviceFee: "21",
+        location: "Dhaka, Bangladesh",
+        link: "https://i.ibb.co/0YZP8YR/the-atlantic-apartments-1br-classical-kitchen-solis.jpg",
+        rule1: "You'll have the condominium to yourself",
+        rule2: "You can check in with the doorman",
+        rule3: "10 recent guest said this place was sparkling clean",
+        rule4: "Superhosts are experienced, highly rated hosts who are committed to providing great stays for guests.",
+        description: "It's newly constructed 7 storied building maintaining building code by a locally famous architect. Enough lights and natural air are playing here. The place is calm and noise free. You'll love my place for its lovely and bright look comfortable stay. Bangladesh is a beauty with its six seasons and green."
     }
 ]

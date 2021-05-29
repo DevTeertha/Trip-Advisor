@@ -6,6 +6,7 @@ import {
   Route
 } from "react-router-dom";
 import Search from './Components/Search/Search';
+import BookNow from './Components/BookNow/BookNow';
 
 function App() {
   return (
@@ -14,8 +15,14 @@ function App() {
           <Route exact path="/">
             <Home></Home>
           </Route>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
           <Route path="/search">
             <Search></Search>
+          </Route>
+          <Route path="/:id">
+            <BookNow></BookNow>
           </Route>
         </Switch>
       </Router>
