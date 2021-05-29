@@ -41,3 +41,29 @@ export const homeData = [
         person: '$209 per person'
     }
 ]
+export const hotelsData = [
+    {
+        id: 'h1',
+        name: "Hotel Dhaka",
+        room: "4guest 2bedrooms 2beds 2baths",
+        benefit: "Wifi Air Conditioning Kitchen",
+        price: "33$/night",
+        link: "https://i.ibb.co/PtfhG1g/201916769776917542.jpg"
+    },
+    {
+        id: 'h2',
+        name: "Hotel Cottage",
+        room: "4guest 2bedrooms 2beds 2baths",
+        benefit: "Wifi Air Conditioning Kitchen",
+        price: "43$/night",
+        link: "https://i.ibb.co/3M3cW9w/photo-1522708323590-d24dbb6b0267.jpg"
+    },
+    {
+        id: 'h3',
+        name: "Hotel Radison",
+        room: "4guest 2bedrooms 2beds 2baths",
+        benefit: "Wifi Air Conditioning Kitchen",
+        price: "55$/night",
+        link: "https://i.ibb.co/0YZP8YR/the-atlantic-apartments-1br-classical-kitchen-solis.jpg"
+    }
+]
