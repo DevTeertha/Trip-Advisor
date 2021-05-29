@@ -13,18 +13,18 @@ const Home = (props) => {
         <div className="bg-light">
             <Header></Header>
             <Container>
-                <section className="row d-flex mt-5">
-                    <div className="col-md-4">
+                <section className="row">
+                    <div className="col-md-4 mt-5">
                         <Booking></Booking>
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 mt-5">
                         <h5 className="fw-bold text-secondary">Experiences</h5>
                         <div className="row">
                             {
                                 places.experienceData.map((experience,index) => <ExperienceCard key={index} experience={experience}></ExperienceCard>)
                             }
                         </div>
-                        <h5 className="fw-bold text-secondary">Homes</h5>
+                        <h5 className="fw-bold text-secondary mt-5">Homes</h5>
                         <div className="row">
                             {
                                 places.homeData.map((place,index) => <HomeCard bookNow={bookNow} key={index} place={place}></HomeCard>)

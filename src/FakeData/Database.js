@@ -7,7 +7,7 @@ export const experienceData = [
     },
     {
         imgLink: 'https://i.ibb.co/QfjfCmB/7665753c-6de6-4b28-8d13-6bfec32708c1-1-X.png',
-        place: 'ENTERTAINMENT-VANCOUVER',
+        place: 'ENTERTAINMENT',
         title: 'Tour with an Enthusiastic Local',
         person: '$3 per person'
     },

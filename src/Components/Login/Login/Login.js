@@ -115,7 +115,6 @@ const Login = (props) => {
 
     return (
         <div className="login-page container ">
-
             <div className="d-flex justify-content-center my-5  ">
                 <div style={{ borderRadius: "20px" }} className="w-50 bg-light p-5">
                     <form onSubmit={handleSubmit}>
