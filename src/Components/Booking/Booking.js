@@ -36,7 +36,7 @@ const Booking = (props) => {
                 <DatePicker selected={endDate} onChange={date => setEndDate(date)} />
                 <div className="App mt-4">
                     <Link to="/search">
-                        <button onClick={() => searchResult(hotels, location, fullDate)} className="btn btn-primary w-100">Search</button>
+                        <button onClick={() => searchResult(hotels, location, fullDate)} className="btn btn-dark w-100">Search</button>
                     </Link>
                 </div>
             </div>

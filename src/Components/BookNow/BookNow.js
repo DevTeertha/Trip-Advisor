@@ -23,11 +23,11 @@ const BookNow = (props) => {
     const stDate = dateFormatHandler(startDate);
     const edDate = dateFormatHandler(endDate);
     return (
-        <div className="container">
+        <div className="bg-light">
             <div>
                 <Header></Header>
             </div>
-            <div>
+            <div className="container">
                 <div style={{ height: "250px", overflow: "hidden" }} className="cover-img border">
                     <img style={{ height: "100%" }} className="w-100" src={link} alt="" />
                 </div>
@@ -70,15 +70,16 @@ const BookNow = (props) => {
                         </div>
                         <div className="col">
                             <div className="border p-4">
-                                <h4> {price}$/ Night </h4>
-                                <p>
+                                <h4 className="text-center fw-bold">Booking Process</h4>
+                                <h4 className="fw-bold mt-4"> {price}$/ Night </h4>
+                                <p className="my-4">
                                     <span className="fw-bold text-secondary">
                                         Dates
                                     </span>
                                     <br />
                                     <p className="border fs-4 p-3 text-dark">{stDate}  to  {edDate}</p>
                                 </p>
-                                <p>
+                                <p className="my-4">
                                     <span className="fw-bold text-secondary">
                                         Guest
                                     </span>

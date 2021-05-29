@@ -1,0 +1,14 @@
+.hotel-link{
+    text-decoration: none;
+}
+.hotel-card{
+    border: 1px solid rgba(128, 128, 128, 0.329);
+}
+.hotel-card:hover{
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    border: 1px solid gray;
+}

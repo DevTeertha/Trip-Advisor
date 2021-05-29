@@ -12,7 +12,7 @@ const Home = (props) => {
     const { bookNow, places, bookList } = props;
 
     return (
-        <div>
+        <div className="bg-light">
             <Header></Header>
             <Container>
                 <section className="row d-flex mt-5">
