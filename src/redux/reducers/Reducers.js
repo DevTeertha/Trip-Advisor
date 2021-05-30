@@ -12,6 +12,7 @@ const initialState = {
 export const Reducers = (state = initialState, action) => {
     switch(action.type){
         case SEARCH:{
+            
             return {
                 ...state,
                 results: action

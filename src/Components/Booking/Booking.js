@@ -11,12 +11,15 @@ import { Link } from "react-router-dom";
 let location;
 const Booking = (props) => {
     const { hotels, searchResult } = props;
-
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
 
     const changeHandler = (e) => {
         location = e.target.value;
+    }
+    const fullDate = {
+        startDate,
+        endDate
     }
 
     return (
@@ -33,7 +36,7 @@ const Booking = (props) => {
                 <DatePicker selected={endDate} onChange={date => setEndDate(date)} />
                 <div className="App mt-4">
                     <Link to="/search">
-                        <button onClick={() => searchResult(hotels, location)} className="btn btn-primary w-100">Search</button>
+                        <button onClick={() => searchResult(hotels, location, fullDate)} className="btn btn-primary w-100">Search</button>
                     </Link>
                 </div>
             </div>
@@ -43,7 +46,8 @@ const Booking = (props) => {
 
 const mapStateToProps = state => {
     return {
-        hotels: state.hotels
+        hotels: state.hotels,
+        results: state.results
     }
 }
 const mapDispatchToProps = {
