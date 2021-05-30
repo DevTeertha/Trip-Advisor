@@ -1,3 +1,27 @@
 .logo{
     text-decoration: none;
 }
+.link:hover{
+    background-color:#c5d5cb;
+    text-decoration: none;
+}
+
+.profile-trigger{
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    border: 1px solid white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    
+}
+.profile-image{
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
