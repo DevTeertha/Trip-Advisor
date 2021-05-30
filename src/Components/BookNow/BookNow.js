@@ -2,21 +2,24 @@ import React from 'react';
 import Header from '../Header/Header';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Payment from '../Payment/Payment';
+import { bookingNow } from '../../redux/actions/Actions';
 
 const BookNow = (props) => {
-    const { results } = props;
+    const { results, bookNow, bookingNow } = props;
     const { startDate, endDate } = results.date;
 
     const { id } = useParams();
     const hotel = results.data.find(ht => ht.id === id);
     const { name, room, price, cleaningFee, serviceFee, link, rule1, rule2, rule3, rule4, description, location } = hotel;
+    const total = parseInt(price) + parseInt(cleaningFee) + parseInt(serviceFee);
 
 
     const dateFormatHandler = (date) => {
         const year = date.getFullYear();
         const month = date.toLocaleString('default', { month: 'long' });
         const day = date.getDate();
-        const fullDate = day+" "+month+" "+year;
+        const fullDate = day + " " + month + " " + year;
         return fullDate;
     }
 
@@ -88,24 +91,28 @@ const BookNow = (props) => {
                                 </p>
                                 <table className="fw-bold">
                                     <tr>
-                                        <td style={{width: "95%"}}>Hotel Charge /Night:</td>
+                                        <td style={{ width: "95%" }}>Hotel Charge /Night:</td>
                                         <td>{price}$</td>
                                     </tr>
                                     <tr>
-                                        <td style={{width: "95%"}}>Cleaning Fee:</td>
+                                        <td style={{ width: "95%" }}>Cleaning Fee:</td>
                                         <td>{cleaningFee}$</td>
                                     </tr>
-                                    <tr style={{borderBottom: "1px solid gray"}}>
-                                        <td style={{width: "95%"}}>Service Fee:</td>
+                                    <tr style={{ borderBottom: "1px solid gray" }}>
+                                        <td style={{ width: "95%" }}>Service Fee:</td>
                                         <td>{serviceFee}$</td>
                                     </tr>
                                     <tr>
-                                        <td style={{width: "95%"}}>Total:</td>
-                                        <td> {parseInt(price)+parseInt(cleaningFee)+parseInt(serviceFee)}$ </td>
+                                        <td style={{ width: "95%" }}>Total:</td>
+                                        <td> {total}$ </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <button className="btn btn-success mt-4 w-100">Book Now</button>
+                                            {
+                                                bookNow ?
+                                                    <Payment name={name} total={total}></Payment> :
+                                                    <button onClick={()=>bookingNow(true)} className="btn btn-success mt-4 w-100">Book Now</button>
+                                            }
                                         </td>
                                     </tr>
                                 </table>
@@ -120,8 +127,13 @@ const BookNow = (props) => {
 
 const mapStateToProps = state => {
     return {
-        results: state.results
+        results: state.results,
+        bookNow: state.bookNow
     }
 }
 
-export default connect(mapStateToProps)(BookNow);
+const mapDispatchToProps = {
+    bookingNow: bookingNow
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(BookNow);

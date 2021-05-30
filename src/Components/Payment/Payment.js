@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
+import { setSuccess } from '../../redux/actions/Actions';
+import { connect } from 'react-redux';
 
-const Payment = () => {
-
-    const [success, setSuccess] = useState(false);
-
+const Payment = (props) => {
+    const { success, setSuccess, total, name } = props;
     const data = [
         {
-            name: 'Unique Cob Cottage',
-            price: 128
+            name: name,
+            price: total+"$"
         }
     ]
 
@@ -32,4 +32,13 @@ const Payment = () => {
     );
 };
 
-export default Payment;
+const mapStateToProps = state => {
+    return {
+        success: state.success
+    }
+}
+const mapDispatchToProps = {
+    setSuccess: setSuccess
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Payment);
