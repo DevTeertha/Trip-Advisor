@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Search from './Components/Search/Search';
 import BookNow from './Components/BookNow/BookNow';
+import Home from './Components/Home/Home';
 
 export const UserContext = createContext()
 
@@ -19,7 +20,8 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-          </Route>
+       <Home></Home>
+       </Route>
           <Route path="/login">
             <Login></Login>
           </Route>
