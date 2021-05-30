@@ -26,7 +26,8 @@ const Login = (props) => {
             .then((result) => {
                 const { displayName, email, photoURL } = result.user;
                 const signedInUser = { isSignIn: true, name: displayName, email: email, img: photoURL };
-                setUser(signedInUser)
+                sessionStorage.setItem("user",JSON.stringify(signedInUser));
+                setUser(JSON.parse(sessionStorage.getItem("user")))
                 storeAuthToken();
                 history.replace(from);
             })

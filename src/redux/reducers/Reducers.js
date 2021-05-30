@@ -16,7 +16,7 @@ const initialState = {
     bookList: {},
     hotels: hotelsData,
     user: {
-        data: {
+        data: JSON.parse(sessionStorage.getItem("user")) || {
             isSignIn: false,
             name: "",
             email: "",

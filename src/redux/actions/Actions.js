@@ -39,6 +39,7 @@ export const setUser = data => {
     }
 }
 export const Logout = (data) => {
+    sessionStorage.clear();
     return{
         type: LOGOUT,
         data
