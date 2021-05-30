@@ -1,4 +1,4 @@
-import { BOOK_NOW, SEARCH, SET_USER, SET_SUCCESS, ADD_BOOK } from "../actions/Actions";
+import { BOOK_NOW, SEARCH, SET_USER, SET_SUCCESS, ADD_BOOK, LOGOUT } from "../actions/Actions";
 import { homeData, experienceData } from "../../FakeData/Database";
 import { hotelsData } from "../../FakeData/Database";
 
@@ -41,6 +41,12 @@ export const Reducers = (state = initialState, action) => {
         }
         case SET_USER: {
             return {
+                ...state,
+                user: action
+            }
+        }
+        case LOGOUT: {
+            return{
                 ...state,
                 user: action
             }

@@ -2,8 +2,21 @@
     text-decoration: none;
 }
 .profile-image-container{
+    cursor: pointer;
     width: 2em;
     height: 2em;
+}
+.profile-pop{
+    text-align: center;
+}
+.profile-pop-img{
+    padding: 0.5em;
+    border: 1px solid black;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
 }
 .profile-image{
     border: 1px solid white;

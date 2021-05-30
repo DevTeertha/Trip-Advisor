@@ -2,9 +2,23 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './Navbar.css'
 import { connect } from 'react-redux';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+import { Logout } from '../../redux/actions/Actions';
 
 const Navbar = (props) => {
-    const { isSignIn, img } = props.user.data;
+    const { user, Logout } = props;
+    const { isSignIn, img, name } = user.data;
+
+    console.log(Logout)
+
+    const resetUser = {
+        isSignIn: false,
+        name: "",
+        email: "",
+        img: ""
+    }
+
     return (
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
@@ -26,9 +40,20 @@ const Navbar = (props) => {
                         {
                             isSignIn ?
                                 <li class="nav-item ms-3 fs-5">
-                                    <div className="profile-image-container mt-1">
-                                        <img className="profile-image" src={img} alt=""/>
-                                    </div>
+
+                                    <Popup trigger={
+                                        <div className="profile-image-container mt-1">
+                                            <img className="profile-image" src={img} alt="" />
+                                        </div>
+                                    } position="bottom center">
+                                        <div className="p-3">
+                                            <div className="profile-pop">
+                                                <img className="profile-pop-img" src={img} alt="" />
+                                            </div>
+                                            <p className="mt-2 text-center fw-bold">{name}</p>
+                                            <button onClick={()=>Logout(resetUser)} className="btn btn-outline-dark w-100">Log Out</button>
+                                        </div>
+                                    </Popup>
                                 </li>
                                 :
                                 <li class="nav-item ms-3 fs-5">
@@ -48,4 +73,8 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(Navbar);
+const mapDispatchToProps = {
+    Logout: Logout
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
