@@ -4,7 +4,7 @@ const HomeCard = (props) => {
     const { bookNow } = props;
     const { id, imgLink, place, title, person } = props.place;
     return (
-        <div className="col-md-4">
+        <div className="col-md-6 col-lg-4">
             <div className={`d-flex justify-content-center`}>
                 <div class="card" style={{ width: '18rem' }}>
                     <div class="card-body">

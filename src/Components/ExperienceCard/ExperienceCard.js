@@ -3,7 +3,7 @@ import './ExperienceCard.css'
 
 const ExperienceCard = ({ experience }) => {
     return (
-        <div className="col-md-4">
+        <div className="col-md-6 col-lg-4">
             <div className={`d-flex justify-content-center`}>
                 <div class="card" style={{ width: '18rem' }}>
                     <div class="card-body">
