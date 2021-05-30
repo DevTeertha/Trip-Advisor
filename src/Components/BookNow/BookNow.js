@@ -34,7 +34,7 @@ const BookNow = (props) => {
                 <div>
                     <div className="row my-5">
                         <div className="col">
-                            <div>
+                            <div className="shadow border p-4">
                                 <h1 className="fw-bold"> {name} </h1>
                                 <p className="text-secondary"> {location} <br /> {room} </p>
                                 <hr />
@@ -69,7 +69,7 @@ const BookNow = (props) => {
                             </div>
                         </div>
                         <div className="col">
-                            <div className="border p-4">
+                            <div className="border p-4 shadow">
                                 <h4 className="text-center fw-bold">Booking Process</h4>
                                 <h4 className="fw-bold mt-4"> {price}$/ Night </h4>
                                 <p className="my-4">

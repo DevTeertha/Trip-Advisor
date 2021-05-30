@@ -7,7 +7,7 @@ import MapView from './MapView';
 
 const Search = (props) => {
     const { results, hotels } = props;
-    const { data, location } = results;
+    const { location } = results;
 
     return (
         <div className="bg-light">
@@ -17,7 +17,7 @@ const Search = (props) => {
             <div className="container py-5">
                 <div className="row">
                     <div className="col-md-12 col-lg-6">
-                        <div className="p-4 mt-3 border">
+                        <div className="p-4 mt-3 border bg-white">
                             <h5 className="fw-bold">Stay in {location} Division</h5>
                             <div className="mt-4">
                                 {

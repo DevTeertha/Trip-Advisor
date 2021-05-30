@@ -5,7 +5,11 @@ import { hotelsData } from "../../FakeData/Database";
 const initialState = {
     places: {homeData, experienceData},
     results: {
-        data:[]
+        data:[],
+        date: {
+            startDate: new Date(),
+            endDate: new Date()
+        }
     },
     bookList: {},
     hotels: hotelsData,
