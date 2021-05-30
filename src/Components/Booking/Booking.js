@@ -3,57 +3,55 @@ import DatePicker from "react-datepicker";
 import './Booking.css'
 
 import "react-datepicker/dist/react-datepicker.css";
-import { Button } from 'react-bootstrap';
+import { searchResult } from '../../redux/actions/Actions';
+import { connect } from 'react-redux';
 
-const Booking = () => {
+import { Link } from "react-router-dom";
 
+let location;
+const Booking = (props) => {
+    const { hotels, searchResult } = props;
     const [startDate, setStartDate] = useState(new Date());
-
     const [endDate, setEndDate] = useState(new Date());
+
+    const changeHandler = (e) => {
+        location = e.target.value;
+    }
+    const fullDate = {
+        startDate,
+        endDate
+    }
 
     return (
         <div>
-            <h5>Where do you want to go</h5>
-            <form className='form-control mt-4 pb-5'>
-                <p className="mt-4">Location</p>
+            <h5 className="fw-bold">Where do you want to go</h5>
+            <div className='form-control mt-4 pb-5'>
+                <p className="mt-4 fw-bold">Location</p>
                 <div className="from-group" >
-                    <input type="text" id='location' className="form-control" placeholder='Enter location' name='location' required />
+                    <input onBlur={changeHandler} type="text" id='location' className="form-control" placeholder='Enter location' name='location' required />
                 </div>
-                <p className="mt-4">Arrival</p>
-                <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
-                <p className="mt-4">Departure</p>
-                <DatePicker selected={endDate} onChange={date => setEndDate(date)} />
-                <div className='d-flex adult mt-4'>
-                    <div>
-                        <h4>Adult</h4>
-                    </div>
-                    <div>
-                        &nbsp;&nbsp;<span><b>0</b></span> &nbsp;&nbsp; <Button><h5>-</h5></Button> &nbsp;&nbsp; <Button><h5>+</h5></Button>
-                    </div>
-                </div>
-                <div className='d-flex adult mt-4'>
-                    <div>
-                        <h4>Child</h4>
-                    </div>
-                    <div>
-                        &nbsp;&nbsp;&nbsp;<span><b>0</b></span> &nbsp;&nbsp; <Button><h5>-</h5></Button> &nbsp;&nbsp; <Button><h5>+</h5></Button>
-                    </div>
-                </div>
-                <div className='d-flex adult mt-4'>
-                    <div>
-                        <h4>Babies</h4>
-                    </div>
-                    <div>
-                        <span><b>0</b></span> &nbsp;&nbsp; <Button><h5>-</h5></Button> &nbsp;&nbsp; <Button><h5>+</h5></Button>
-                    </div>
-                </div>
+                <p className="mt-4 fw-bold">Arrival</p>
+                <DatePicker className="form-control" selected={startDate} onChange={date => setStartDate(date)} />
+                <p className="mt-4 fw-bold">Departure</p>
+                <DatePicker className="form-control w-100" selected={endDate} onChange={date => setEndDate(date)} />
                 <div className="App mt-4">
-                    <Button>Apply</Button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <Button>Search</Button>
+                    <Link to="/search">
+                        <button onClick={() => searchResult(hotels, location, fullDate)} className="btn btn-dark w-100">Search</button>
+                    </Link>
                 </div>
-            </form>
+            </div>
         </div>
     );
 };
 
-export default Booking;
+const mapStateToProps = state => {
+    return {
+        hotels: state.hotels,
+        results: state.results
+    }
+}
+const mapDispatchToProps = {
+    searchResult: searchResult
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Booking);
